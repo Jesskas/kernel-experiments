@@ -6,6 +6,7 @@ Half of this is a learning process, half of this follows a goal of a minimalisti
 For now, only devices with a BCM2835 CPU; testing on a Raspberry Pi Zero and a Raspberry Pi B.
 
 ## What happens so far
+Simple printing "Hello world" to the screen. Try it out for yourself!
 ```
 git clone https://github.com/Jesskas/kernel-experiments.git
 cd kernel-experiments
