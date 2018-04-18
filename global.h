@@ -1,3 +1,6 @@
+#include "printf.h"
+
+// TODO: Remove deprecated methods
 extern void PUT32 (uint32_t, uint32_t);
 extern void PUT16 (uint32_t, uint16_t);
 extern void PUT8 (uint32_t, uint8_t);

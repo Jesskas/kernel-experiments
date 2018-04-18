@@ -31,6 +31,9 @@ mailbox.o : mailbox/mailbox.c
 fb.o : fb/fb.c
 	$(ARMGNU)-gcc $(COPS) -c fb/fb.c -o fb.o
 
-kernel.img : linker.ld start.o periph.o mailbox.o fb.o kernel.o
-	$(ARMGNU)-ld start.o periph.o mailbox.o fb.o kernel.o -T linker.ld -o kernel.elf
+printf.o : printf.c
+	$(ARMGNU)-gcc $(COPS) -c printf.c -o printf.o
+
+kernel.img : linker.ld start.o periph.o mailbox.o fb.o printf.o kernel.o
+	$(ARMGNU)-ld start.o periph.o mailbox.o fb.o printf.o kernel.o -T linker.ld -o kernel.elf 
 	$(ARMGNU)-objcopy kernel.elf -O binary kernel.img

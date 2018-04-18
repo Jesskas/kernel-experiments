@@ -144,23 +144,11 @@ void uart_printf(const char* fmt, ...)
     va_list args;
     va_start(args, fmt);
 
-    //while (*fmt != '\0')
-    //{
-    //    if (*fmt == 'd') {
-    //        int i = va_arg(args, int);
-    //        uart_puts("##some_number##");
-    //    } else if (*fmt == 'c') {
-    //        // note automatic conversion to integral type?
-    //        // int c = va_arg(args, int);
-    //        // printf("%c\n", c);
-    //    } else {
-    //        // not implemented x:
-    //    }
-    //    ++fmt;
-    //}
+    static char printf_buf[1024] = { 0 };
+    vsprintf(printf_buf, fmt, args);
     va_end(args);
 
-    uart_puts(fmt);
+    uart_puts(printf_buf);
 }
 
 
